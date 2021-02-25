@@ -1,5 +1,28 @@
-<!DOCTYPE html>
-<html>
+<body>
+<style>
+body {
+  padding: 25px;
+  background-color: white;
+  color: black;
+  font-size: 25px;
+}
+
+.dark-mode {
+  background-color: #141d26;
+  color: white;
+}
+</style>
+</head>
+<body>
+
+
+<script>
+function myFunction() {
+   var element = document.body;
+   element.classList.toggle("dark-mode");
+}
+</script>
+
 <head>
 <meta name="description" content="home of the mii">
 </head>
@@ -21,7 +44,7 @@
 <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5">
 <meta name="msapplication-TileColor" content="#da532c">
 <meta name="theme-color" content="#ffffff">
-<p style="text-align:center;"><img src="camwave.png" alt="cam"></p>
+<p style="text-align:center;"><img src="camwave.png"onclick="myFunction()"></p>
 <div>
 <div>
 <p style="text-align:center;"><img src="p3.png" alt="cam"></p>
@@ -55,5 +78,3 @@
 <div>
 <div>
 <p style="text-align:center;"><img src="p6.png" alt="cam"></p>
-
-  
