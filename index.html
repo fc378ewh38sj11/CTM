@@ -7,6 +7,21 @@ body {
   font-size: 25px;
 }
 
+/* Light mode */
+@media (prefers-color-scheme: light) {
+    body {
+        background-color: white;
+        color: black;
+    }
+}
+
+/* Dark mode */
+@media (prefers-color-scheme: dark) {
+    body {
+        background-color: 121212;
+        color: white;
+    }
+}
 .dark-mode {
   background-color: #121212;
   color: white;
@@ -22,6 +37,7 @@ function myFunction() {
    element.classList.toggle("dark-mode");
 }
 </script>
+
 
 <head>
 <meta name="description" content="home of the mii">
@@ -78,4 +94,3 @@ function myFunction() {
 <div>
 <div>
 <p style="text-align:center;"><img src="p6.png" alt="cam"></p>
- 
