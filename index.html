@@ -57,6 +57,7 @@
 <p style="text-align:center;"><img src="p6.png" alt="cam"></p>
 <div>
   <div>
+    <a href="javascript:void(0);" id=key onclick="func(0)"></a>
     <div id="clockbox"style="text-align:center;font:65pt rodin.ttf; color:#302c34;"></div>
 
 <script type="text/javascript">
@@ -73,3 +74,9 @@ document.getElementById('clockbox').innerHTML=clocktext;
 GetClock();
 setInterval(GetClock,1000);
 </script>
+<style>
+@font-face {
+  font-family: rodin;
+  src: url(rodin.ttf);
+}
+</style>
