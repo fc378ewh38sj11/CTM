@@ -63,17 +63,22 @@
 <p style="text-align:center;"><img src="p6.png" alt="cam"></p>
 <div>
   <div>
-    <a href="javascript:void(0);" id=key onclick="func(0)"></a>
+ <a href="javascript:void(0);" id=key onclick="func(0)"></a>
     <div id="clockbox"style="text-align:center;font:15pt rodin; color:#302c34;"></div>
-
+    
 <script type="text/javascript">
 function GetClock(){
 var d=new Date();
-var nhour=d.getHours(),nmin=d.getMinutes(),nsec=d.getSeconds();
-if(nmin<=9) nmin="0"+nmin;
-if(nsec<=9) nsec="0"+nsec;
+var nmonth=d.getMonth(),ndate=d.getDate(),nyear=d.getFullYear();
+var nhour=d.getHours(),nmin=d.getMinutes(),ap;
+if(nhour==0){ap=" AM";nhour=12;}
+else if(nhour<12){ap=" AM";}
+else if(nhour==12){ap=" PM";}
+else if(nhour>12){ap=" PM";nhour-=12;}
 
-var clocktext=""+nhour+":"+nmin+":"+nsec+"";
+if(nmin<=9) nmin="0"+nmin;
+
+var clocktext=""+(nmonth+1)+"."+ndate+"."+nyear+" "+nhour+":"+nmin+ap+"";
 document.getElementById('clockbox').innerHTML=clocktext;
 }
 
