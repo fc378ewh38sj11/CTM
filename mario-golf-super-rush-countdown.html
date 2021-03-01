@@ -36,6 +36,11 @@ p {
 <p style="font-family:filton; font-size: 20px;">Mario Golf: Super Rush will be released in...</p>
 <p id="demo"></p>
 <script>
+function addCss(cssString) {
+    //...
+}  
+ addCss (
+     '.text {font-family: filton}' );
 // Set the date we're counting down to
 var countDownDate = new Date("Jun 25, 2021 00:00:00").getTime();
 // Update the count down every 1 second
@@ -62,6 +67,7 @@ var x = setInterval(function() {
     document.getElementById("demo").innerHTML = "EXPIRED";
   }
 }, 1000);
+
 </script>
 <p class="aligncenter">
     <img src="golf.gif" alt="cam" />
