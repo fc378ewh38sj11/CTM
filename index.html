@@ -1,84 +1,45 @@
-<!DOCTYPE html>
 <style>
-@font-face {
-  font-family: filson;
-  src: url(FilsonSoftRegular.ttf);
+body {
+    background-color: #232222
 }
-</style>
-<title>cameron</title>
-<meta name="description" content="home of the mii">
-<meta name="keywords" content="mii, mario, miitopia, profile, wii, nintendo">
-<html prefix="og: https://ogp.me/ns#">
-<!--
-                 #&%#%%&*                
-           #######.#########            
-         #(######&..&########%          
-        #####%%%#..@..%%%%%%###         
-        ##%%%%&...... ...&&%&&&@        
-       %%%%&,(&,.............,. .....   
-        %,,.......*.,.....,##&%%...,(   
-          %%............,& #%(*%%%      
-           %*%&&&/**%(%&(%%/#%%%        
-                .*,,*.#%(/%%&           
-              %(/(..*#/(%%              
-           #%#&%%....%%%%(              
-         %%#(#%%.....&%%%/              
-     /%%%((%#/*%.....**#*(/             
-   ....*%%(/&#*..(,.. %%%%%             
-    %.,#    (....,..,,,,.               
-             .,,,,(,,,,. *              
-             ,. .,* (,,,. #             
-              ..  ,* #,,,..#            
-               ....*  /...,,            
-               ,.../   ( .,,*           
-               /#*#(%    &#/#(          
-            #/,((((((    % .,.(         
-                          .##.  
-built by cam.
--->
-<meta property="og:title" content="cameron" />
-<meta property="og:description" content="home of the mii" />
-<meta property="og:type" content="profile.cam" />
-<meta property="og:url" content="https://www.cameronthemii.com/" />
-<meta property="og:image" content="https://www.cameronthemii.com/c-banner.png" />
-<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
-<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
-<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
-<link rel="manifest" href="/site.webmanifest">
-<link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5">
-<meta name="msapplication-TileColor" content="#da532c">
-<meta name="theme-color" content="#ffffff">
-<p style="text-align:center;"><img src="camwave.png"
-<div>
-<div>
-<p style="text-align:center;"><img src="p3.png"
-<div>
-<div>
-<div>
-<div>
-<a href="https://music.apple.com/profile/cameronthemii">
-<p style="text-align:center;"><img src="camstreetwear.png"
-<div>
-<div>
-<div>
-<p style="text-align:center;"><img src="p4.png"
-<div>
-<div>
-<div>
-<div>
-<a href="https://robocallindex.com/">
-<p style="text-align:center;"><img src="camphone.png"
-<div>
-<div>
-<div>
-<p style="text-align:center;"><img src="p5.png"
-<div>
-<div>
-<div>
-<div>
- <a href="javascript:void(0);" id=key onclick="func(0)"></a>
-    <div id="clockbox"style="text-align:center;font:15pt filson; color:#302c34;"></div>
 
+.center {
+    display: grid;
+    justify-content: center;
+    align-items: center;
+    margin-top: 7vh;
+
+}
+
+</style>
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1" /> 
+    <meta name="description" content="home of the mii">
+	<meta name="keywords" content="mii, mario, miitopia, profile, wii, nintendo">
+	<html prefix="og: https://ogp.me/ns#">
+    <meta property="og:title" content="cameron" />
+	<meta property="og:description" content="home of the mii" />
+	<meta property="og:type" content="profile.cam" />
+	<meta property="og:url" content="https://www.cameronthemii.com/" />
+	<meta property="og:image" content="https://www.cameronthemii.com/c-banner.png" />
+	<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+	<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+	<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+	<link rel="manifest" href="/site.webmanifest">
+	<link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5">
+	<meta name="msapplication-TileColor" content="#da532c">
+	<meta name="theme-color" content="#ffffff">
+    <title>
+        cameron
+    </title>
+</head>
+
+ <a href="javascript:void(0);" id=key onclick="func(0)"></a>
+    <div id="clockbox"style="text-align:center;font:17pt filson; color:#FFFFFF;"></div>
+    
 <script type="text/javascript">
 function GetClock(){
 var d=new Date();
@@ -88,11 +49,28 @@ if(nhour==0){ap=" AM";nhour=12;}
 else if(nhour<12){ap=" AM";}
 else if(nhour==12){ap=" PM";}
 else if(nhour>12){ap=" PM";nhour-=12;}
+
 if(nmin<=9) nmin="0"+nmin;
+
 var clocktext=""+(nmonth+1)+"."+ndate+"."+nyear+" "+nhour+":"+nmin+ap+"";
 document.getElementById('clockbox').innerHTML=clocktext;
 }
+
 GetClock();
 setInterval(GetClock,1000);
 </script>
-<br>
+
+<div class="center">
+<img src="https://www.cameronthemii.com/wave%20icon.png" style="center">
+</div>
+
+<a href="https://music.apple.com/profile/cameronthemii">
+<div class="center">
+<img src="https://www.cameronthemii.com/music%20icon.png" style="center">
+</a>
+</div>
+
+<a href="https://robocallindex.com">
+<div class="center">
+<img src="https://www.cameronthemii.com/telephony%20icon.png" style="center">
+</div>
