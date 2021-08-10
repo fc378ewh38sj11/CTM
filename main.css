@@ -7,6 +7,10 @@ body {
   background-image: url('bgk.png');
 }
 
+body {
+  overflow: hidden; /* hide scrollbars */
+}
+
 .center {
     display: grid;
     justify-content: center;
