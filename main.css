@@ -7,15 +7,15 @@ body {
   background-image: url('bgk.png');
 }
 
-/* hide scrollbar for chrome, safari and opera */
-.example::-webkit-scrollbar {
-    display: none;
+/* hide scrollbar but allow scrolling */
+element {
+    -ms-overflow-style: none; /* for Internet Explorer, Edge */
+    scrollbar-width: none; /* for Firefox */
+    overflow-y: scroll; 
 }
 
-/* Hide scrollbar for ie, edge and ff */
-.example {
-  -ms-overflow-style: none;  /* ie and edge */
-  scrollbar-width: none;  /* firefox */
+element::-webkit-scrollbar {
+    display: none; /* for Chrome, Safari, and Opera */
 }
 
 .center {
