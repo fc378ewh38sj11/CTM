@@ -2,6 +2,10 @@ body {
     background-color: #242526
 }
 
+body {
+  background-image: url('bgnn.png');
+}
+
 .center {
     display: grid;
     justify-content: center;
