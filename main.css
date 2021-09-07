@@ -2,7 +2,8 @@ body {
     background-color: #242526
 }
 
-
+background-image: url('bgnn.png');
+}
 
 .center {
     display: grid;
