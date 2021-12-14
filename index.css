@@ -8,9 +8,9 @@
     --radius: 8px;
     --theme: #fff;
     --entry: #fff;
-    --primary: rgba(0, 0, 0, 0.88);
+    --primary: rgba(255, 255, 255, 0.8);
     --secondary: rgba(0, 0, 0, 0.56);
-    --tertiary: rgba(0, 0, 0, 0.16);
+    --tertiary: rgba(62, 62, 62, 0.8);
     --content: rgba(0, 0, 0, 0.88);
     --hljs-bg: #1c1d21;
     --code-bg: #f5f5f5;
@@ -38,7 +38,8 @@ body {
     font-size: 18px;
     line-height: 1.6;
     word-break: break-word;
-    background: var(--theme)
+    background-color: #121212;
+    
     
 }
 
@@ -61,6 +62,7 @@ ul {
 
 a {
     text-decoration: none
+    
 }
 
 body,figure,ul {
