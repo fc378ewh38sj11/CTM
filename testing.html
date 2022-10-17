@@ -1,0 +1,260 @@
+
+
+<script>
+document.getElementById("img").addEventListener("click", function(){
+    document.getElementById("audio").play();
+    </script>
+<!--
+                 #&%#%%&*                
+           #######.#########            
+         #(######&..&########%          
+        #####%%%#..@..%%%%%%###         
+        ##%%%%&...... ...&&%&&&@        
+       %%%%&,(&,.............,. .....   
+        %,,.......*.,.....,##&%%...,(   
+          %%............,& #%(*%%%      
+           %*%&&&/**%(%&(%%/#%%%        
+                .*,,*.#%(/%%&           
+              %(/(..*#/(%%              
+           #%#&%%....%%%%(              
+         %%#(#%%.....&%%%/              
+     /%%%((%#/*%.....**#*(/             
+   ....*%%(/&#*..(,.. %%%%%             
+    %.,#    (....,..,,,,.               
+             .,,,,(,,,,. *              
+             ,. .,* (,,,. #             
+              ..  ,* #,,,..#            
+               ....*  /...,,            
+               ,.../   ( .,,*           
+               /#*#(%    &#/#(          
+            #/,((((((    % .,.(         
+                          .##.  
+
+built by cam.
+
+-->
+
+<style>
+:root {
+    --gap: 24px;
+    --content-gap: 20px;
+    --nav-width: 1024px;
+    --main-width: 720px;
+    --header-height: 60px;
+    --footer-height: 60px;
+    --radius: 8px;
+    --primary: rgba(255, 255, 255, 0.8);
+    --tertiary: rgba(62, 62, 62, 0.8);
+}
+
+
+img {
+        -webkit-filter: drop-shadow(4px 5px 10px #545454);
+        filter: drop-shadow(4px 5px 10px #545454);
+}
+
+html {
+    -webkit-tap-highlight-color: transparent;
+    overflow-y: scroll
+}
+
+a,button,body,h1,h2,h3,h4,h5,h6 {
+    color: var(--primary)
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    font-size: 18px;
+    line-height: 1.6;
+    word-break: break-word;
+    background-color: #121212;
+    overflow: hidden; 
+    
+}
+
+article,aside,figcaption,figure,footer,header,hgroup,main,nav,section,table {
+    display: block
+}
+
+h1,h2,h3,h4,h5,h6 {
+    line-height: 1.2
+}
+
+h1,h2,h3,h4,h5,h6,p {
+    margin-top: 0;
+    margin-bottom: 0
+}
+
+ul {
+    padding: 0
+}
+
+a {
+    text-decoration: none
+    
+}
+
+body,figure,ul {
+    margin: 0
+}
+
+
+button,input,textarea {
+    padding: 0;
+    font: inherit;
+    background: 0 0;
+    border: 0
+}
+
+input,textarea {
+    outline: 0
+}
+
+button,input[type=button],input[type=submit] {
+    cursor: pointer
+}
+
+input:-webkit-autofill,textarea:-webkit-autofill {
+    box-shadow: 0 0 0 50px var(--theme)inset
+}
+
+img {
+    display: block;
+    max-width: 100%
+}
+
+#theme-toggle svg {
+    height: 18px
+}
+
+button#theme-toggle {
+    font-size: 26px;
+    margin: auto 4px
+    
+}
+
+.main {
+    position: relative;
+    min-height: calc(100vh - var(--header-height) - var(--footer-height));
+    max-width: calc(var(--main-width) + var(--gap) * 2);
+    margin: auto;
+    padding: var(--gap)
+}
+
+
+.buttons,.main .profile {
+    display: flex;
+    justify-content: center
+    
+}
+
+.main .profile {
+    align-items: center;
+    min-height: calc(100vh - var(--header-height) - var(--footer-height) - (var(--gap) * 2));
+    text-align: center
+}
+
+.profile .profile_inner h1 {
+    padding: 12px 0
+}
+
+.profile img {
+    display: inline-table;
+    border-radius: 50%;
+    pointer-events: none
+}
+
+.buttons {
+    flex-wrap: wrap;
+    max-width: 400px;
+    margin: 0 auto
+}
+
+.button {
+    background: var(--tertiary);
+    border-radius: var(--radius);
+    margin: 8px;
+    padding: 6px;
+    transition: transform .1s
+}
+
+.button-inner {
+    padding: 0 8px
+}
+
+.button:active {
+    transform: scale(.96)
+}
+</style>
+
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Poppins">
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1" /> 
+<meta name="description" content="home of the mii">
+<html prefix="og: https://ogp.me/ns#">
+<meta property="og:title" content="cameron" />
+<meta property="og:type" content="profile.cam" />
+<meta property="og:url" content="https://www.cameronthemii.com/" />
+<meta property="og:image" content="https://www.cameronthemii.com/camicon.png" />
+<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+<link rel="manifest" href="/site.webmanifest">
+<link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5">
+<meta name="msapplication-TileColor" content="#da532c">
+<meta name="apple-mobile-web-app-status-bar-style" content="#121212">
+<title>cameron</title>
+
+<main class=main>
+<div class=profile>
+<div class=profile_inner>
+<audio id="audio" src="https://www.cameronthemii.com/greeting.mp3"></audio>
+<img src=https://www.cameronthemii.com/wave%20icon.png height=300 width=300>
+<br>
+<h1>cameron.</h1>
+
+<div class=buttons>
+<a class=button href=https://music.apple.com/profile/cammy__wammy
+<span class=button-inner>music</span>
+</a>
+<a class=button href=https://open.spotify.com/artist/0aloXt37AELZyetmyBTUNK
+<span class=button-inner>spotify</span>
+</a>
+<a class=button href=https://www.cameronthemii.com/extras
+<span class=button-inner>extras</span>
+</a>
+<a class=button href=mailto:hello@cmrn.in
+<span class=button-inner>say hi</span>
+</a>
+</div>
+<br>
+<div class="center">
+<iframe src="https://now-playing-2e8d3.web.app/?user=kanye-farts&theme=stacked" style="position:relative; left:15px" width="250" height="100" frameBorder="0">
+</iframe>
+</div>
+ <a href="javascript:void(0);" id=key onclick="func(0)"></a>
+    <div id="clockbox"style="text-align:center;font:17pt poppins; color:#ccd0c8;"></div>
+    
+<script type="text/javascript">
+function GetClock(){
+var d=new Date();
+var nmonth=d.getMonth(),ndate=d.getDate(),nyear=d.getFullYear();
+var nhour=d.getHours(),nmin=d.getMinutes(),ap;
+if(nhour==0){ap=" AM";nhour=12;}
+else if(nhour<12){ap=" AM";}
+else if(nhour==12){ap=" PM";}
+else if(nhour>12){ap=" PM";nhour-=12;}
+
+if(nmin<=9) nmin="0"+nmin;
+
+var clocktext=""+(nmonth+1)+"."+ndate+"."+nyear+" "+nhour+":"+nmin+ap+"";
+document.getElementById('clockbox').innerHTML=clocktext;
+}
+
+GetClock();
+setInterval(GetClock,1000);
+
+
+</script>
+
