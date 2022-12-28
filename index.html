@@ -200,9 +200,7 @@ button#theme-toggle {
 <main class=main>
 <div class=profile>
 <div class=profile_inner>
-<a onclick="myAudioFunction('a');">
 <img src=https://www.cameronthemii.com/wave%20icon.png height=300 width=300>
-</a>
 <br>
 <h1>cameron</h1>
 
@@ -247,15 +245,3 @@ document.getElementById('clockbox').innerHTML=clocktext;
 GetClock();
 setInterval(GetClock,1000);
 </script>
-
-<script>
-     var aAudio = new Audio('hi.mp3');
-     var bAudio = new Audio('b.mp3');
-     function myAudioFunction(letter) {
-         if(letter == 'a') {
-             aAudio.play();
-         } else if(letter == 'b') {
-             bAudio.play();
-         }
-     }
- </script>
