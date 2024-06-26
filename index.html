@@ -1,4 +1,5 @@
 
+
 <!--
                  #&%#%%&*                
            #######.#########            
@@ -176,6 +177,13 @@ button#theme-toggle {
 .button:active {
     transform: scale(.96)
 }
+        @keyframes spin {
+            from { transform: rotate(0deg); }
+            to { transform: rotate(360deg); }
+        }
+        .spin {
+            animation: spin 2s linear;
+        }
 </style>
 
 <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Poppins">
@@ -200,7 +208,7 @@ button#theme-toggle {
 <main class=main>
 <div class=profile>
 <div class=profile_inner>
-<img src=https://www.cameronthemii.com/wave%20icon.png height=300 width=300>
+<img id="konami-image" img src=https://www.cameronthemii.com/wave%20icon.png height=300 width=300>
 <br>
 <h1>cameron</h1>
 
@@ -240,6 +248,7 @@ setInterval(GetClock,1000);
 </script>
 
     <audio id="konami-audio" src="https://vgmtreasurechest.com/soundtracks/1-2-switch-2017-switch/umaftygzss/Common%202.mp3"></audio>
+
     <script>
         // The Konami Code sequence
         const konamiCode = [38, 38, 40, 40, 37, 39, 37, 39, 66, 65];
@@ -251,12 +260,24 @@ setInterval(GetClock,1000);
             audio.play();
         }
 
+        // Function to spin the image
+        function spinImage() {
+            const image = document.getElementById('konami-image');
+            image.classList.add('spin');
+
+            // Remove the class after the animation ends to allow for re-triggering
+            image.addEventListener('animationend', function() {
+                image.classList.remove('spin');
+            }, { once: true });
+        }
+
         // Event listener for keydown events
         document.addEventListener('keydown', function(event) {
             if (event.keyCode === konamiCode[konamiIndex]) {
                 konamiIndex++;
                 if (konamiIndex === konamiCode.length) {
                     playAudio();
+                    spinImage();
                     konamiIndex = 0; // Reset the index
                 }
             } else {
