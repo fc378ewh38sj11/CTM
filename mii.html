@@ -1,0 +1,702 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Every Mii supported title</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background: #f4f4f4;
+      padding: 20px;
+    }
+    h1 {
+      text-align: center;
+    }
+    .legend {
+      display: flex;
+      justify-content: center;
+      margin-bottom: 20px;
+    }
+    .legend div {
+      margin: 0 10px;
+      padding: 5px 10px;
+      border-radius: 8px;
+      font-weight: bold;
+      cursor: pointer;
+    }
+    .playable { background-color: #f99; }
+    .background { background-color: #99f; }
+    .icon { background-color: #adadad; }
+
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(100px, 1fr));
+      gap: 10px;
+    }
+    .game {
+      background: #fff;
+      border-radius: 10px;
+      overflow: hidden;
+      text-align: center;
+      transition: transform 0.2s;
+    }
+    .game:hover {
+      transform: scale(1.05);
+    }
+    .game img {
+      width: 100%;
+      height: auto;
+      display: block;
+    }
+    .hidden {
+      display: none !important;
+    }
+    .center {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 50%;
+  }
+  </style>
+</head>
+<body>
+ <img src="logo.png"" alt="Every Mii supported title" class="center">
+ <br>
+  <div class="legend">
+    <div class="playable" onclick="filterGames('playable')" title="Titles where you can play as and/or interact with Miis (includes head swaps, masks, etc.)">Playable / Interactive</div>
+    <div class="background" onclick="filterGames('background')" title="Titles where you can see your Miis in the background of gameplay">Background / Non-Playable</div>
+    <div class="icon" onclick="filterGames('icon')" title="Titles where Miis are used as player or character identifiers (save files, StreetPass, Miiverse, etc.)">Icon / Avatar</div>
+    <div style="background:#ddd;" onclick="filterGames('all')">Show All</div>
+  </div>
+
+  <div class="grid" id="gameGrid">
+    <!-- Example Game Card -->
+    <a class="game icon" href="details/007.html">
+      <img src="https://art.gametdb.com/wii/cover/US/RJ2E52.png" title="007: Quantum of Solace">
+    </a>
+
+    <a class="game playable" href="details/ale.html">
+      <img src="https://art.gametdb.com/wii/cover/US/S2AEAF.png" title="Active Life Explorer">
+    </a>
+
+    <a class="game playable" href="details/alec.html">
+      <img src="https://art.gametdb.com/wii/cover/US/REJEAF.png" title="Active Life Extreme Challenge">
+    </a>
+
+        <a class="game playable background" href="details/almc.html">
+      <img src="https://art.gametdb.com/wii/cover/US/SFDEAF.png" title="Active Life Magical Carnival">
+    </a>
+
+        <a class="game playable" href="details/alocw.html">
+      <img src="https://art.gametdb.com/wii/cover/US/RFAEAF.png" title="Active Life Outdoor Challenge">
+    </a>
+
+        <a class="game playable background" href="details/alec.html">
+      <img src="https://art.gametdb.com/wii/cover/JA/RK3J01.png" title="And-Kensaku">
+    </a>
+
+        <a class="game playable" href="details/accf.html">
+      <img src="https://art.gametdb.com/wii/cover/US/RUUE01.png" title="Animal Crossing: City Folk">
+    </a>
+
+        <a class="game playable" href="details/aquas.html">
+      <img src="https://art.gametdb.com/wii/cover/US/WGPE.png" title="AquaSpace">
+    </a>
+
+        <a class="game playable" href="details/arst5.html">
+      <img src="https://art.gametdb.com/wii/cover/US/SA5E78.png" title="Are You Smarter Than A 5th Grader? Back to School">
+    </a>
+
+        <a class="game playable" href="details/aob.html">
+      <img src="https://art.gametdb.com/wii/cover/US/WABE.png" title="Art of Balance">
+    </a>
+
+        <a class="game playable background" href="details/bh.html">
+      <img src="https://art.gametdb.com/wii/cover/US/SXFE52.png" title="Band Hero">
+    </a>
+
+            <a class="game icon" href="details/bj2.html">
+      <img src="https://art.gametdb.com/wii/cover/US/WJWE.png" title="Bejeweled 2">
+    </a>
+
+            <a class="game icon background" href="details/bba.html">
+      <img src="https://art.gametdb.com/wii/cover/US/RYWE01.png" title="Big Brain Academy: Wii Degree">
+    </a>
+
+            <a class="game background" href="details/billy.html">
+      <img src="https://art.gametdb.com/wii/cover/JA/SBCJ2N.png" title="Billy's Boot Camp: Wii de Enjoy Diet!">
+    </a>
+
+            <a class="game playable background" href="details/bomberman.html">
+      <img src="https://art.gametdb.com/wii/cover/EN/WM8P.png" title="Bomberman Blast">
+    </a>
+
+                <a class="game icon" href="details/brainchallenge.html">
+      <img src="https://art.gametdb.com/wii/cover/US/W2CE.png" title="Brain Challenge">
+    </a>
+
+                <a class="game icon" href="details/bbp.html">
+      <img src="https://art.gametdb.com/wii/cover/US/WBLE.png" title="Bubble Bobble Plus!">
+    </a>
+
+                <a class="game background" href="details/cmitm.html">
+      <img src="https://art.gametdb.com/wii/cover/US/R72E5G.png" title="Cake Mania: In The Mix!">
+    </a>
+
+                    <a class="game playable background" href="details/cmoc.html">
+      <img src="https://art.gametdb.com/wii/cover/US/HAPE.png" title="Check Mii Out Channel">
+    </a>
+
+                <a class="game icon" href="details/chessc.html">
+      <img src="https://art.gametdb.com/wii/cover/EN/WCHP.png" title="Chess Challenge!">
+    </a>
+
+                    <a class="game icon" href="details/circus.html">
+      <img src="https://art.gametdb.com/wii/cover/EN/R5QPGT.png" title="Circus">
+    </a>
+
+                    <a class="game background" href="details/chessc.html">
+      <img src="https://art.gametdb.com/wii/cover/US/SCZEMH.png" title="Crazy Machines">
+    </a>
+
+                    <a class="game playable background" href="details/ddr2010.html">
+      <img src="https://art.gametdb.com/wii/cover/US/SDYEA4.png" title="DanceDanceRevolution">
+    </a>
+
+                        <a class="game playable background" href="details/ddr2011.html">
+      <img src="https://art.gametdb.com/wii/cover/US/SUREA4.png" title="DanceDanceRevolution II">
+    </a>
+
+                        <a class="game playable" href="details/ddrdg.html">
+      <img src="https://art.gametdb.com/wii/cover/US/RDNEA4.png" title="DanceDanceRevolution: Disney Grooves">
+    </a>
+    
+                        <a class="game playable" href="details/ddrhp2.html">
+      <img src="https://art.gametdb.com/wii/cover/US/RD4EA4.png" title="DanceDanceRevolution: Hottest Party 2">
+    </a>
+
+                        <a class="game playable background" href="details/ddrhp3.html">
+      <img src="https://art.gametdb.com/wii/cover/US/RJREA4.png" title="DanceDanceRevolution: Hottest Party 3">
+    </a>
+
+                            <a class="game icon" href="details/dataeast.html">
+      <img src="https://art.gametdb.com/wii/cover/US/R26E5G.png" title="Data East Arcade Classics">
+    </a>
+
+                            <a class="game playable" href="details/dond.html">
+      <img src="https://art.gametdb.com/wii/cover/US/RLAE20.png" title="Deal or No Deal">
+    </a>
+
+                                <a class="game icon" href="details/dpc.html">
+      <img src="https://art.gametdb.com/wii/cover/JA/HCDJ.png" title="Digicam Print Channel">
+    </a>
+
+                                <a class="game playable background" href="details/disneyc.html">
+      <img src="https://art.gametdb.com/wii/cover/US/SDGE4Q.png" title="Disney Channel: All Star Party">
+    </a>
+
+                                    <a class="game icon" href="details/dkbb.html">
+      <img src="https://art.gametdb.com/wii/cover/US/RDKE01.png" title="Donkey Kong: Barrel Blast">
+    </a>
+
+                                    <a class="game icon" href="details/dkjb.html">
+      <img src="https://art.gametdb.com/wii/cover/US/R49E01.png" title="Donkey Kong: Jungle Beat">
+    </a>
+
+                                        <a class="game playable background" href="details/dkjb.html">
+      <img src="https://art.gametdb.com/wii/cover/US/WDME.png" title="Dr. Mario Online Rx">
+    </a>
+
+                                            <a class="game playable" href="details/dsm.html">
+      <img src="https://art.gametdb.com/wii/cover/US/W2TE.png" title="Drill Sergeant Mindstrong">
+    </a>
+
+                                            <a class="game playable" href="details/eef.html">
+      <img src="https://art.gametdb.com/wii/cover/US/WSME.png" title="Eat! Fat! FIGHT!">
+    </a>
+
+                                            <a class="game playable background" href="details/eb.html">
+      <img src="https://art.gametdb.com/wii/cover/US/SRYEAF.png" title="ExerBeat">
+    </a>
+    
+                                            <a class="game icon" href="details/equ.html">
+      <img src="https://art.gametdb.com/wii/cover/US/WEQE.png" title="Equilibrio">
+
+                                                      <a class="game playable background" href="details/evc.html">
+      <img src="https://art.gametdb.com/wii/cover/US/HAJE.png" title="Everybody Votes Channel">
+    </a>
+    </a>
+
+                                                <a class="game icon" href="details/ffp.html">
+      <img src="https://art.gametdb.com/wii/cover/US/WFME.png" title="Family & Friends Party">
+    </a>
+    
+
+                                                    <a class="game playable" href="details/ff2012.html">
+      <img src="https://art.gametdb.com/wii/cover/US/SF7E41.png" title="Family Feud: 2012 Edition">
+    </a>
+
+                                                        <a class="game playable" href="details/ffeu.html">
+      <img src="https://art.gametdb.com/wii/cover/EN/R9NPMR.png" title="Family Fortunes">
+    </a>
+
+                                                            <a class="game playable background" href="details/fff.html">
+      <img src="https://art.gametdb.com/wii/cover/US/R97E9B.png" title="Family Fun Football">
+    </a>
+
+                                                                <a class="game playable" href="details/fj.html">
+      <img src="https://art.gametdb.com/wii/cover/JA/RFJJAF.png" title="Family Jockey">
+    </a>
+
+                                                                    <a class="game playable" href="details/ft.html">
+      <img src="https://art.gametdb.com/wii/cover/JA/WTBJ.png" title="Fantastic Tambourine">
+    </a>
+
+                                                                    <a class="game icon" href="details/frl.html">
+      <img src="https://art.gametdb.com/wii/cover/US/WRLE.png" title="FAST Racing League">
+    </a>
+
+                                                                    <a class="game playable" href="details/fifa08.html">
+      <img src="https://art.gametdb.com/wii/cover/EN/RF8P69.png" title="FIFA 08">
+    </a>
+
+                                                                    <a class="game playable" href="details/fifa09.html">
+      <img src="https://art.gametdb.com/wii/cover/RU/RF9R69.png" title="FIFA 09 All-Play">
+    </a>
+
+                                                                    <a class="game playable" href="details/ffcce.html">
+      <img src="https://art.gametdb.com/wii/cover/US/RFFEGD.png" title="Final Fantasy Crystal Chronicles: Echoes of Time">
+    </a>
+                                                                        <a class="game icon" href="details/ffccc.html">
+      <img src="https://art.gametdb.com/wii/cover/US/RFCEGD.png" title="Final Fantasy Crystal Chronicles: The Crystal Bearers">
+    </a>
+
+                                                                            <a class="game icon" href="details/ftw.html">
+      <img src="https://art.gametdb.com/wii/cover/US/R5DE5G.png" title="Flip's Twisted World">
+    </a>
+
+                                                                            <a class="game playable background" href="details/fortune.html">
+      <img src="https://art.gametdb.com/wii/cover/US/ST7E01.png" title="Fortune Street">
+    </a>
+
+                                                                            <a class="game background" href="details/gmp.html">
+      <img src="https://images.launchbox-app.com/553f7df0-5364-45f6-8851-23e5694f44b1.png" title="Ghost Mansion Party">
+    </a>
+
+                                                                                <a class="game icon" href="details/gtgw.html">
+      <img src="https://art.gametdb.com/wii/cover/JA/RHJJ13.png" title="Ginsei Table Games Wii">
+    </a>
+
+                                                                                    <a class="game background" href="details/gintama.html">
+      <img src="https://art.gametdb.com/wii/cover/JA/RGNJAF.png" title="Gintama: Yorozuya Chuubu: Tsukkomable Douga">
+    </a>
+
+                                                                                    <a class="game playable" href="details/gpl.html">
+      <img src="https://art.gametdb.com/wii/cover/US/RJXE5G.png" title="Go Play Lumberjacks">
+    </a>
+
+                                                                                    <a class="game playable background" href="details/gvw.html">
+      <img src="https://art.gametdb.com/wii/cover/US/SGVEAF.png" title="Go Vacation">
+    </a>
+
+                                                                                        <a class="game playable background" href="details/gh5.html">
+      <img src="https://art.gametdb.com/wii/cover/US/SXEE52.png" title="Guitar Hero 5">
+    </a>
+
+                                                                                        <a class="game playable background" href="details/ghwt.html">
+      <img src="https://art.gametdb.com/wii/cover/US/SXAE52.png" title="Guitar Hero: World Tour">
+    </a>
+
+                                                                                            <a class="game icon" href="details/hbr.html">
+      <img src="https://images.launchbox-app.com/96a607b8-8049-49c2-a841-8f33ea075652.png" title="Hajite! Block Rush">
+    </a>
+
+                                                                                            <a class="game playable background" href="details/hdc.html">
+      <img src="https://art.gametdb.com/wii/cover/JA/ROHJAF.png" title="Happy Dance Collection">
+    </a>
+
+                                                                                            <a class="game playable" href="details/hh.html">
+      <img src="https://art.gametdb.com/wii/cover/US/WM9E.png" title="Happy Hammerin'">
+    </a>
+
+                                                                                                <a class="game playable" href="details/hmap.html">
+      <img src="https://art.gametdb.com/wii/cover/US/RBIEE9.png" title="Harvest Moon: Animal Parade'">
+    </a>
+
+                                                                                                <a class="game playable background" href="details/hfgn2.html">
+      <img src="https://art.gametdb.com/wii/cover/US/R6XE69.png" title="Hasbro Family Game Night 2">
+    </a>
+
+                                                                                                <a class="game playable background" href="details/hfgn3.html">
+      <img src="https://art.gametdb.com/wii/cover/US/SHBE69.png" title="Hasbro Family Game Night 3'">
+    </a>
+
+                                                                                                <a class="game playable background" href="details/hfgn4.html">
+      <img src="https://art.gametdb.com/wii/cover/EN/SFGP69.png" title="Hasbro Family Game Night 4: The Game Show">
+    </a>
+
+                                                                                                    <a class="game icon" href="details/hac.html">
+      <img src="https://art.gametdb.com/wii/cover/US/WLGE.png" title="HB Arcade Cards">
+    </a>
+
+                                                                                                        <a class="game background" href="details/hac.html">
+      <img src="https://art.gametdb.com/wii/cover/US/WHOE.png" title="Hockey Allstar Shootout">
+    </a>
+
+                                                                                                            <a class="game icon" href="details/hwta.html">
+      <img src="https://art.gametdb.com/wii/cover/US/SHVE78.png" title="Hot Wheels: Track Attack">
+    </a>
+
+                                                                                                                <a class="game playable" href="details/hula.html">
+      <img src="https://art.gametdb.com/wii/cover/JA/SH2JMS.png" title="Hula Wii: Tanoshiku Hula o Odorou!!">
+    </a>
+    
+                                                                                                                    <a class="game playable" href="details/jawa.html">
+      <img src="https://art.gametdb.com/wii/cover/JA/RJWJEL.png" title="Jawa: Mammoth to Himitsu no Ishi">
+    </a>
+
+                                                                                                                        <a class="game playable" href="details/jeo.html">
+      <img src="https://art.gametdb.com/wii/cover/US/SJPE78.png" title="Jeopardy!">
+    </a>
+
+                                                                                                                            <a class="game icon" href="details/jett.html">
+      <img src="https://art.gametdb.com/wii/cover/US/WJEE.png" title="Jett Rocket">
+    </a>
+
+                                                                                                                                <a class="game playable background" href="details/mlb.html">
+      <img src="https://art.gametdb.com/wii/cover/US/RMPE54.png" title="MLB Power Pros">
+    </a>
+
+                                                                                                                                    <a class="game playable background" href="details/powerpros2009.html">
+      <img src="https://art.gametdb.com/wii/cover/JA/R4WJA4.png" title="Jikkyou Powerful Major League 2009">
+    </a>
+
+                                                                                                                                        <a class="game playable background" href="details/mlb08.html">
+      <img src="https://art.gametdb.com/wii/cover/US/RL8E54.png" title="MLB Power Pros 2008">
+    </a>
+
+                                                                                                                                            <a class="game playable background" href="details/powerpros15.html">
+      <img src="https://art.gametdb.com/wii/cover/JA/RP5JA4.png" title="Jikkyou Powerful Pro Yakyuu 15">
+    </a>
+
+                                                                                                                                                <a class="game playable background" href="details/powerprosnext.html">
+      <img src="https://art.gametdb.com/wii/cover/JA/RX8JA4.png" title="Jikkyou Powerful Pro Yakyuu Next">
+    </a>
+
+                                                                                                                                                    <a class="game playable background" href="details/powerproswii.html">
+      <img src="https://art.gametdb.com/wii/cover/JA/RJPJA4.png" title="Jikkyou Powerful Pro Yakyuu Wii">
+    </a>
+
+                                                                                                                                                        <a class="game playable" href="details/jinsei.html">
+      <img src="https://art.gametdb.com/wii/cover/JA/SJ3JDA.png" title="Jinsei Game Happy Family ">
+    </a>
+
+                                                                                                                                                            <a class="game playable" href="details/jinseihappy.html">
+      <img src="https://art.gametdb.com/wii/cover/JA/SJ5JDA.png" title="Jinsei Game Happy Family Gotouchi Neta Zouryou Shiage">
+    </a>
+
+                                                                                                                                                                <a class="game playable background" href="details/jinseiwii.html">
+      <img src="https://art.gametdb.com/wii/cover/JA/RJGJDA.png" title="Jinsei Game Wii">
+    </a>
+
+                                                                                                                                                                    <a class="game playable background" href="details/jinseiwiiex.html">
+      <img src="https://art.gametdb.com/wii/cover/JA/RXJJDA.png" title="Jinsei Game Wii EX">
+    </a>
+
+                                                                                                                                                                        <a class="game icon" href="details/jissen.html">
+      <img src="https://art.gametdb.com/wii/cover/JA/RH7J8P.png" title="Jissen Pachi-Slot Pachinko Hisshouhou! Sammy's Collection: Hokuto no Ken Wii">
+    </a>
+
+                                                                                                                                                                            <a class="game icon" href="details/jissen.html">
+      <img src="https://art.gametdb.com/wii/cover/US/WJSE.png" title="Jungle Speed">
+    </a>
+    
+                                                                                                                                                                            <a class="game playable" href="details/joysound.html">
+      <img src="https://art.gametdb.com/wii/cover/US/SOKEA4.png" title="Karaoke Joysound">
+    </a>
+        
+                                                                                                                                                                            <a class="game playable" href="details/joysoundduet.html">
+      <img src="https://art.gametdb.com/wii/cover/JA/SKDJ18.png" title="Karaoke Joysound Wii: Duet Kyoku-hen">
+    </a>
+            
+                                                                                                                                                                            <a class="game playable" href="details/joysoundenka.html">
+      <img src="https://art.gametdb.com/wii/cover/JA/SKEJ18.png" title="Karaoke Joysound Wii: Enka Kayoukyoku-hen">
+    </a>
+                
+                                                                                                                                                                            <a class="game playable" href="details/joysoundx.html">
+      <img src="https://art.gametdb.com/wii/cover/JA/SOKJ18.png" title="Karaoke Joysound Wii DX">
+    </a>
+                    
+                                                                                                                                                                            <a class="game playable" href="details/joysoundsuper.html">
+      <img src="https://art.gametdb.com/wii/cover/JA/S3SJ18.png" title="Karaoke Joysound Wii Super DX: Hitori de Minna de Utai Houdai!">
+    </a>
+
+                                                                                                                                                                                <a class="game playable" href="details/kenteitv.html">
+      <img src="kentei.png" title="Kentei TV! Wii: Minna de Gotouchi Quiz Battle!">
+    </a>
+    
+                                                                                                                                                                                <a class="game playable background" href="details/kidzbop.html">
+      <img src="https://art.gametdb.com/wii/cover/US/SKBEG9.png" title="Kidz Bop Dance Party!">
+    </a>
+
+                                                                                                                                                                                    <a class="game icon" href="details/kotoba.html">
+      <img src="https://art.gametdb.com/wii/cover/JA/R5MJAF.png" title="Kotoba no Puzzle Mojipittan Wii Deluxe">
+    </a>
+
+                                                                                                                                                                                        <a class="game playable" href="details/letscatch.html">
+      <img src="https://art.gametdb.com/wii/cover/US/W2KE.png" title="Let's Catch">
+    </a>
+
+                                                                                                                                                                                            <a class="game playable" href="details/lineattack.html">
+      <img src="https://art.gametdb.com/wii/cover/US/DC8A.png" title="Line Attack Heroes">
+    </a>
+
+                                                                                                                                                                                                <a class="game playable" href="details/linkscross.html">
+      <img src="https://art.gametdb.com/wii/cover/US/RZPE01.png" title="Link's Crossbow Training">
+    </a>
+    
+                                                                                                                                                                                                <a class="game icon" href="details/maboshi.html">
+      <img src="https://art.gametdb.com/wii/cover/US/WMBE.png" title="Maboshi's Arcade">
+    </a>
+
+                                                                                                                                                                                                    <a class="game icon" href="details/nfl08.html">
+      <img src="https://art.gametdb.com/wii/cover/US/RNFE69.png" title="Madden NFL 08">
+    </a>
+    
+                                                                                                                                                                                                    <a class="game icon" href="details/nfl09.html">
+      <img src="https://art.gametdb.com/wii/cover/US/RFLE69.png" title="Madden NFL 09 All-Play">
+    </a>
+
+                                                                                                                                                                                                        <a class="game icon" href="details/nfl10.html">
+      <img src="https://art.gametdb.com/wii/cover/US/R2IE69.png" title="Madden NFL 10">
+    </a>
+                                                                                                                                                                                                            <a class="game icon" href="details/nfl11.html">
+      <img src="https://art.gametdb.com/wii/cover/US/SMEE69.png" title="Madden NFL 11">
+    </a>
+
+                                                                                                                                                                                                                <a class="game icon" href="details/nfl12.html">
+      <img src="https://art.gametdb.com/wii/cover/US/SM7E69.png" title="Madden NFL 12">
+    </a>
+    
+                                                                                                                                                                                                                <a class="game icon" href="details/nfl13.html">
+      <img src="https://art.gametdb.com/wii/cover/US/S2ME69.png" title="Madden NFL 13">
+    </a>
+
+                                                                                                                                                                                                                    <a class="game playable" href="details/magnet.html">
+      <img src="https://art.gametdb.com/wii/cover/US/WA2E.png" title="Magnetica Twist">
+    </a>
+
+                                                                                                                                                                                                                        <a class="game playable" href="details/marble.html">
+      <img src="https://art.gametdb.com/wii/cover/US/RK6E18.png" title="Marble Saga: Kororinpa">
+    </a>
+    
+                                                                                                                                                                                                                        <a class="game playable" href="details/ms2012.html">
+      <img src="https://art.gametdb.com/wii/cover/US/SIIE8P.png" title="Mario & Sonic at the London 2012 Olympic Games">
+    </a>
+        
+                                                                                                                                                                                                                        <a class="game playable" href="details/ms2008.html">
+      <img src="https://art.gametdb.com/wii/cover/US/RWSE8P.png" title="Mario & Sonic at the Olympic Games">
+    </a>
+            
+                                                                                                                                                                                                                        <a class="game playable" href="details/ms2008.html">
+      <img src="https://art.gametdb.com/wii/cover/US/ROLE8P.png" title="Mario & Sonic at the Olympic Winter Games">
+    </a>
+                
+                                                                                                                                                                                                                        <a class="game playable background" href="details/mkw.html">
+      <img src="https://art.gametdb.com/wii/cover/US/RMCE01.png" title="Mario Kart Wii">
+    </a>
+
+                                                                                                                                                                                                                            <a class="game icon background" href="details/mkc.html">
+      <img src="mkchannel.png" title="Mario Kart Channel">
+    </a>
+
+                                                                                                                                                                                                                            <a class="game playable background" href="details/mp8.html">
+      <img src="https://art.gametdb.com/wii/cover/US/RM8E01.png" title="Mario Party 8">
+    </a>
+    
+                                                                                                                                                                                                                            <a class="game playable background" href="details/msm.html">
+      <img src="https://art.gametdb.com/wii/cover/US/RMKE01.png" title="Mario Sports Mix">
+    </a>
+        
+                                                                                                                                                                                                                            <a class="game icon" href="details/msc.html">
+      <img src="https://art.gametdb.com/wii/cover/US/R4QE01.png" title="Mario Strikers Charged">
+              
+                                                                                                                                                                                                                            <a class="game playable background" href="details/mss.html">
+      <img src="https://art.gametdb.com/wii/cover/US/RMBE01.png" title="Mario Super Sluggers">
+    </a>
+                  
+                                                                                                                                                                                                                            <a class="game playable background" href="details/msss.html">
+      <img src="https://art.gametdb.com/wii/cover/US/R38E78.png" title="Marvel Super Hero Squad">
+    </a>
+                      
+                                                                                                                                                                                                                            <a class="game background icon" href="details/mp3c.html">
+      <img src="https://art.gametdb.com/wii/cover/US/RM3E01.png" title="Metroid Prime 3: Corruption">
+    </a>
+                          
+                                                                                                                                                                                                                            <a class="game playable background" href="details/miic.html">
+      <img src="https://art.gametdb.com/wii/cover/US/HACA.png" title="Mii Channel">
+    </a>
+                              
+                                                                                                                                                                                                                            <a class="game icon" href="details/shanghai.html">
+      <img src="shanghai.png" title="Minna de Taisen Puzzle: Shanghai Wii">
+    </a>
+
+                                                                                                                                                                                                                                <a class="game icon" href="details/penguin.html">
+      <img src="penguin.png" title="Minna de Tobikome! Penguin Diving - Hooper Looper ">
+    </a>
+                              
+                                                                                                                                                                                                                            <a class="game icon" href="details/joushiki.html">
+      <img src="https://art.gametdb.com/wii/cover/JA/RJTJ01.png" title="Minna no Joushiki Ryoku TV">
+    </a>
+                                  
+                                                                                                                                                                                                                            <a class="game playable background" href="details/monopoly.html">
+      <img src="https://art.gametdb.com/wii/cover/US/S75E69.png" title="Monopoly Streets">
+    </a>
+                                     
+                                                                                                                                                                                                                            <a class="game playable background" href="details/mpr.html">
+      <img src="https://art.gametdb.com/wii/cover/US/WBME.png" title="My Pokémon Ranch">
+    </a>
+
+                                                                                                                                                                                                                                <a class="game icon" href="details/nba2k10.html">
+      <img src="https://art.gametdb.com/wii/cover/US/R76E54.png" title="NBA 2K10">
+    </a>
+    
+                                                                                                                                                                                                                                <a class="game icon" href="details/nba2k11.html">
+      <img src="https://art.gametdb.com/wii/cover/US/SB5E54.png" title="NBA 2K11">
+    </a>
+
+                                                                                                                                                                                                                                    <a class="game icon" href="details/nba08.html">
+      <img src="https://art.gametdb.com/wii/cover/US/RNBE69.png" title="NBA Live 08">
+    </a>
+    
+                                                                                                                                                                                                                                    <a class="game icon" href="details/nba09.html">
+      <img src="https://art.gametdb.com/wii/cover/US/RQ9E69.png" title="NBA Live 09 All-Play">
+    </a>
+        
+                                                                                                                                                                                                                                    <a class="game icon" href="details/ncaa09.html">
+      <img src="https://art.gametdb.com/wii/cover/US/RNAE69.png" title="NCAA Football 09">
+    </a>
+
+                                                                                                                                                                                                                                        <a class="game playable background" href="details/nhk.html">
+      <img src="https://art.gametdb.com/wii/cover/JA/RQIJ01.png" title="NHK Kouhaku Quiz Gassen">
+    </a>
+    
+                                                                                                                                                                                                                                        <a class="game playable" href="details/nhl10.html">
+      <img src="https://art.gametdb.com/wii/cover/US/R7OE54.png" title="NHL 2K10">
+    </a>
+
+                                                                                                                                                                                                                                            <a class="game playable" href="details/nhl11.html">
+      <img src="https://art.gametdb.com/wii/cover/US/SH3E54.png" title="NHL 2K11">
+    </a>
+    
+                                                                                                                                                                                                                                            <a class="game playable" href="details/namcomm.html">
+      <img src="https://art.gametdb.com/wii/cover/US/SNMEAF.png" title="Namco Museum Megamix">
+    </a>
+        
+                                                                                                                                                                                                                                            <a class="game playable" href="details/namcomr.html">
+      <img src="https://art.gametdb.com/wii/cover/EN/RN2P70.png" title="Namco Museum Remix">
+    </a>
+
+                                                                                                                                                                                                                                                <a class="game playable" href="details/natgeo.html">
+      <img src="https://art.gametdb.com/wii/cover/EN/SNQPLG.png" title="National Geographic Challenge!">
+    </a>
+
+    
+                                                                                                                                                                                                                                                <a class="game icon" href="details/puti.html">
+      <img src="puti.png" title="Ouchi de Mugen Puchi Puchi Wii">
+    </a>
+
+        
+                                                                                                                                                                                                                                                <a class="game background" href="details/ourhouse.html">
+      <img src="https://art.gametdb.com/wii/cover/US/SHPE5G.png" title="Our House: Party!">
+    </a>
+            
+                                                                                                                                                                                                                                                <a class="game playable background" href="details/pes08.html">
+      <img src="https://art.gametdb.com/wii/cover/US/RWEEA4.png" title="Pro Evolution Soccer 2008">
+    </a>
+
+                                                                                                                                                                                                                                                    <a class="game playable background" href="details/pes09.html">
+      <img src="https://art.gametdb.com/wii/cover/US/R2WEA4.png" title="Pro Evolution Soccer 2009">
+    </a>
+    
+                                                                                                                                                                                                                                                    <a class="game playable background" href="details/pes10.html">
+      <img src="https://art.gametdb.com/wii/cover/US/SUXEA4.png" title="Pro Evolution Soccer 2010">
+    </a>
+        
+                                                                                                                                                                                                                                                    <a class="game playable background" href="details/pes11.html">
+      <img src="https://art.gametdb.com/wii/cover/US/SPVEA4.png" title="Pro Evolution Soccer 2011">
+    </a>
+            
+                                                                                                                                                                                                                                                    <a class="game playable background" href="details/pes12.html">
+      <img src="https://art.gametdb.com/wii/cover/US/S2PEA4.png" title="Pro Evolution Soccer 2012">
+    </a>
+                
+                                                                                                                                                                                                                                                    <a class="game playable background" href="details/pes13.html">
+      <img src="https://art.gametdb.com/wii/cover/US/S3IEA4.png" title="Pro Evolution Soccer 2013">
+    </a>
+                    
+                                                                                                                                                                                                                                                    <a class="game background" href="details/poolrev.html">
+      <img src="https://art.gametdb.com/wii/cover/US/WCSE.png" title="Pool Revolution: Cue Sports">
+    </a>
+                        
+                                                                                                                                                                                                                                                    <a class="game playable background" href="details/popn.html">
+      <img src="https://art.gametdb.com/wii/cover/US/R83EA4.png" title="Pop'n Music">
+    </a>
+                            
+                                                                                                                                                                                                                                                    <a class="game playable" href="details/popup.html">
+      <img src="https://art.gametdb.com/wii/cover/US/WKKE.png" title="Pop-Up Pirate!">
+    </a>
+                                
+                                                                                                                                                                                                                                                    <a class="game playable" href="details/tpir.html">
+      <img src="https://art.gametdb.com/wii/cover/US/SRVE41.png" title="The Price Is Right: Decades">
+    </a>
+
+                                                                                                                                                                                                                                                        <a class="game playable" href="details/familystadium.html">
+      <img src="https://art.gametdb.com/wii/cover/JA/RFMJAF.png" title="Pro Yakyuu Family Stadium">
+    </a>
+    
+                                                                                                                                                                                                                                                        <a class="game playable" href="details/pot.html">
+      <img src="pot.png" title="Potpourrii">
+    </a>
+    
+                                                                                                                                                                                                                                                        <a class="game icon" href="details/punchout.html">
+      <img src="https://art.gametdb.com/wii/cover/US/R7PE01.png" title="Punch-Out!!">
+    </a>
+        
+                                                                                                                                                                                                                                                        <a class="game icon" href="details/puzzleseries.html">
+      <img src="https://art.gametdb.com/wii/cover/JA/RILJ18.png" title="Puzzle Series Vol. 2: Illust Logic + Colorful Logic">
+    </a>
+            
+                                                                                                                                                                                                                                                        <a class="game playable" href="details/quizparty.html">
+      <img src="https://art.gametdb.com/wii/cover/EN/SQUPX3.png" title="Quiz Party">
+    </a>
+                
+                                                                                                                                                                                                                                                        <a class="game icon" href="details/raku.html">
+      <img src="raku.png" title="Raku Raku Kinen Appli Wii: Kinenka no Isha ga Oshieru Nanoka de Yamaru Hoho">
+    </a>
+
+                
+                                                                                                                                                                                                                                                        <a class="game playable" href="details/rapala.html">
+      <img src="https://art.gametdb.com/wii/cover/US/ROJE52.png" title="Rapala: We Fish">
+    </a>
+
+
+  </div>
+
+  <script>
+    function filterGames(type) {
+      const games = document.querySelectorAll('.game');
+      games.forEach(game => {
+        if (type === 'all') {
+          game.classList.remove('hidden');
+        } else if (!game.classList.contains(type)) {
+          game.classList.add('hidden');
+        } else {
+          game.classList.remove('hidden');
+        }
+      });
+    }
+  </script>
+</body>
+</html>
