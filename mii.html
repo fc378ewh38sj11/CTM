@@ -7,7 +7,7 @@
   <meta name="description" content="A list of every single Mii character appearance since 2006. Includes games, applications, etc." />
   <meta name="keywords" content="mii, nintendo, miis, rvl, ffl, cfl, face library">
   <meta property="og:image" content="https://cmrn.in/embed.png"/>
-  <meta name="viewport" content="width=device-width, initial-scale=0.75">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Poppins">
   <title>Every Mii supported title</title>
   <style>
@@ -79,6 +79,9 @@
     background: #1e1e1e;
   }
 
+  .game img {
+    filter: brightness(0.85);
+  }
 
   b {
     color: #ddd;
@@ -94,6 +97,10 @@
     <div class="icon" onclick="filterGames('icon')" title="Titles where Miis are used as player or character identifiers (save files, StreetPass, Miiverse, etc.)">Icon / Avatar</div>
     <div style="background:#ddd;" onclick="filterGames('all')">Show All</div>
   </div>
+
+<div style="text-align:center; margin-bottom: 20px;">
+<a href="#faq" style="text-decoration: underline; color: #007BFF;">Frequently Asked Questions</a>
+</div>
 
 <b>Wii</b>
 <br><br>
@@ -1074,7 +1081,7 @@
     }
   </script>
   <br>
-  <h1>What is this website?</h1>
+  <h1 id="faq">What is this website?</h1>
 This site is an archive of every known title that supports the usage of Nintendo's Mii characters across all platforms. You can sort software by how Miis are used in gameplay.
 <h1>What counts as a Mii supported title?</h1>
 A Mii supported title is any software that uses Nintendo's proprietary system to render Mii characters, internally known as the <a href="https://wiki.raregamingdump.ca/index.php/Face_Library">Face Library.</a> Therefore, the following usages are not counted:
