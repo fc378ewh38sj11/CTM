@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -10,6 +11,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=0.75">
   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Poppins">
   <title>Every Mii supported title</title>
+  
   <style>
     body {
       font-family: 'Poppins', sans-serif;
@@ -19,11 +21,13 @@
     h1 {
       text-align: center;
     }
-    .legend {
-      display: flex;
-      justify-content: center;
-      margin-bottom: 20px;
-    }
+	.legend{
+  	display:flex;
+  	flex-wrap:wrap;
+  	justify-content:center;   
+  	gap:0.5rem 1rem;  
+    
+	}    
     .legend div {
       margin: 0 10px;
       padding: 5px 10px;
@@ -34,7 +38,7 @@
     .playable { background-color: #f99; }
     .background { background-color: #99f; }
     .icon { background-color: #adadad; }
-
+    
     .grid {
       display: grid;
       grid-template-columns: repeat(auto-fill, minmax(100px, 1fr));
@@ -58,6 +62,21 @@
     .hidden {
       display: none !important;
     }
+    
+    .search-bar {
+  	text-align: center;
+  	margin: 2rem 0;
+	}
+
+	.search-bar input {
+ 	 font-size: 1rem;
+     padding: 0.5rem 1rem;
+ 	 width: 100%;
+  	 max-width: 400px;
+  	 border-radius: 0.5rem;
+  	 border: 1px solid #ccc;
+  	 outline: none;
+}
 
     @media (prefers-color-scheme: dark) {
 
@@ -98,9 +117,16 @@
     <div style="background:#ddd;" onclick="filterGames('all')">Show All</div>
   </div>
 
+<div class="search-bar">
+  <input id="search" placeholder="Search titles..." />
+</div>
+
+
 <div style="text-align:center; margin-bottom: 20px;">
 <a href="#faq" style="text-decoration: underline; color: #007BFF;">Frequently Asked Questions</a>
 </div>
+
+
 
 <b>Wii</b>
 <br><br>
@@ -1348,6 +1374,19 @@
       });
     }
   </script>
+  
+<script>
+const input = document.querySelector('#search');
+input.addEventListener('input', e => {
+  const query = e.target.value.toLowerCase();
+  document.querySelectorAll('.game').forEach(game => {
+    const img = game.querySelector('img');
+    const titles = img?.title?.toLowerCase() || '';
+    game.style.display = titles.includes(query) ? '' : 'none';
+  });
+});
+</script>
+
   <br>
   <h2 id="faq">What is this website?</h2>
 This site is an archive of every known title that supports the usage of Nintendo's Mii characters across all platforms. You can sort software by how Miis are used in gameplay.
