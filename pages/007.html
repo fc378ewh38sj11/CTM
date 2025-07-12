@@ -40,9 +40,11 @@ body {
 .header {
   display: flex;
   justify-content: space-between;
-  align-items: flex-start;
+  align-items: center;
   gap: 2rem;
   flex-wrap: wrap;
+  flex-direction: column;
+  text-align: left;
 }
 
 .header .text-content {
@@ -55,8 +57,9 @@ body {
 }
 
 .cover-art img {
-  width: 45%;
+  width: 100%;
   max-width: 180px;
+  height: auto;
   border-radius: 4px;
 }
 
