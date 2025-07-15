@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="en">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Poppins">
+<meta charset="UTF-8">
+<meta name="title" content="Glossary" />
+<meta name="description" content="A glossary of Mii related terms" />
+<meta property="og:image" content="https://cmrn.in/embed.png"/>
+<style>
+@media (prefers-color-scheme: dark) {
+  body {
+    background-color: #111;
+    color: #eee;
+  }
+
+  .container {
+    background-color: #1a1a1a;
+  }
+}
+
+@media (prefers-color-scheme: light) {
+  body {
+    background-color: #f4f4f4;
+    color: #1e1e1e;
+  }
+
+  .container {
+    background-color: #fff;
+  }
+}
+
+body {
+  font-family: Poppins;
+  margin: 0;
+  padding: 0;
+}
+
+.container {
+  max-width: 1000px;
+  margin: 2rem auto;
+  padding: 2rem;
+  border-radius: 8px;
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: left;
+  gap: 2rem;
+  flex-wrap: wrap;
+  flex-direction: column;
+  text-align: left;
+}
+
+.header .text-content {
+  flex: 2;
+}
+
+.header .cover-art {
+  flex: 1;
+  text-align: center;
+}
+
+.cover-art img {
+  width: 100%;
+  max-width: 180px;
+  height: auto;
+  border-radius: 4px;
+}
+
+.cover-art figcaption {
+  font-size: 0.8rem;
+  margin-top: 0.5rem;
+}
+
+section {
+  margin-top: 0.5rem;
+}
+
+.gallery-images {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  align-items: flex-end;
+}
+
+.gallery-images img {
+  max-height: 180px;
+  width: auto;
+  height: auto;
+  object-fit: contain;
+  border-radius: 4px;
+}
+
+
+.button {
+  margin-top: 2rem;
+  text-align: center;
+}
+
+.button a {
+  display: inline-block;
+  background-color: #555;
+  color: #fff;
+  text-decoration: none;
+  padding: 0.75rem 1.5rem;
+  border-radius: 6px;
+  font-weight: bold;
+  transition: background-color 0.2s ease;
+}
+
+.button a:hover {
+  background-color: #777;
+}
+</style>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Glossary</title>
+</head>
+<body>
+  <main class="container">
+    <section class="header">
+      <div class="text-content">
+        <h1>Glossary</h1>
+        <p>This is a glossary of several terms relating to Mii characters and the way they work.</p>
+      </div>
+      </section>
+
+      <h2>A</h2>
+      <li><b>AFL</b> - Arch Face Library, the version of the Face Library used for several Nintendo mobile apps; with Arch referring to <b>Miitomo's</b> internal name.</li>
+      <br>
+      <li><b>AFLResHigh.Dat</b> - A resource file for Arch Face Library. Its assets were reused for the Nintendo Switch's version of the Face Library, albeit slightly compressed. </li>
+      </section>
+
+      <h2>C</h2>
+      <li><b>CFL</b> - Citrus Face Library, the version of the Face Library used for the Nintendo 3DS system; with Citrus referring to the system's internal name.</li>
+      <br>
+      <li><b>CFL_Res.dat</b> - A resource file for Citrus Face Library. Not commonly used due to Mii assets being stored within the NAND of the Nintendo 3DS.</li>
+      <br>
+      <li><b>CFSD</b> - Citrus Face Store Data, a Mii data format used in Nintendo 3DS software. It is used to store Mii data files within certain titles that may utilize them.</li>
+      <br>
+      <li><b>CHARINFO</b> - A Mii data format used in Nintendo Switch titles, meaning character information. It is used to store Mii data files within certain titles that may utilize them. </li>
+      </section>
+
+      <h2>F</h2>
+      <li><b>Face Library</b> - Nintendo's proprietary system that is used to render Mii characters in each title they appear in. There is a version of the Face Library for every platform they appear on, each with its own resource files. The Face Library also stores each Mii saved onto a system and six preset Miis officially known as Guest Miis.</li>
+      <br>
+      <li><b>Fake Mii</b> - Any appearance of a Mii that is not rendered with the Face Library, such as a static model or sprite. Some titles may use fake Miis as bystanders such as <b>Family Fun Football</b>, <b>Mario Kart Wii</b>, <b>Personal Trainer: Walking</b>, <b>Mario Sports Mix</b>, and <b>Rusty's Real-Deal Baseball</b>. This is typically done for optimization purposes and to create the illusion of a largely populated crowd of Miis.</li>
+      <br>
+      <li><b>FFL</b> - Café Face Library, the version of the Face Library used for the Wii U system; with Café referring to the system's internal name. Please note this abbreviation was done by Nintendo to not conflict with the Citrus Face Library and its assets.</li>
+      <br>
+      <li><b>FFLResHigh.dat</b> - A resource file for Café Face Library. Its Mii assets are much higher in quality compared to FFLResMiddle.dat.</li>
+      <br>
+      <li><b>FFLResMiddle.dat</b> - A resource file for Café Face Library. Its Mii assets are slightly compressed compared to FFLResHigh.dat, and is more commonly used in titles. </li>
+      <br>
+      <li><b>FFLResPoster.dat</b> - A resource file for Café Face Library containing extremely high quality Mii textures, being eight times the size of FFLResHigh.dat's. It is only used in <b>FFLUtility</b>, a developer application for the Wii U, and is intended to be used for promo renders of Miis. The file was leaked during the 2024 cyberattack on Kadokawa and Niconico due to the 3DS version of <b>Niconico</b> using FFLUtility for its promotional material.</li>
+      <br>
+      <li><b>FFSD</b> - Café Face Store Data, a Mii data format used in Wii U software. It is used to store Mii data files within certain titles that may utilize them. </li>
+      </section>
+
+      <h2>G</h2>
+      <li><b>Guest Miis</b> - Usually refers to a set of six preset Miis that are included with most versions of the Face Library. Some titles may include their own set of guest Miis.</li>
+      </section>
+
+      <h2>L</h2>
+      <li><b>libmii</b> - A fan-made version of the Face Library designed for Wii homebrew. Each texture was completely redrawn and the library can only render Miis as 2D sprites. </li>
+      <br>
+      </section>
+
+      <h2>M</h2>
+      <li><b>Mii</b> - A customizable avatar developed by Nintendo used on several platforms and services, appearing in over 300 titles since their debut on the Wii's Mii Channel application. </li>
+      <br>
+      <li><b>Mii Usage Guidelines</b> - Guidelines given to game developers who request access to the Face Library on how Miis can and can't be used, later made public for Nintendo Dev Portal users sometime during the Wii U era. The document has recieved three iterations and was last updated in 2016.</li>
+      <br>
+      </section>
+
+      <h2>N</h2>
+      <li><b>Nintendo Web Framework</b> - A developer tool that allows languages such as HTML5, CSS, and JavaScript to function on the Wii U system. A plugin exists for this framework that supports the usage of Mii icons generated server-side; usually for Miiverse support.</li>
+      <br>
+      <li><b>NFL</b> - Nitro Face Library, the version of the Face Library used for the Nintendo DS system; with Nitro referring to the system's name.</li>
+      <br>
+      <li><b>NFL_Res.dat</b> - A resource file for the Nitro Face Library used in every single Nintendo DS title that supports the usage of Mii characters.</li>
+      <br>      
+      </section>      
+
+      <h2>R</h2>
+      <li><b>RCD</b> - Revolution Character Data, a Mii data format used on the Wii.</li>
+      <br>
+      <li><b>RFL</b> - Revolution Face Library, the first version of the Face Library which was used for the Wii system, with Revolution referring to the system's original/internal name.</li>
+      <br>
+      <li><b>RFL_Res.dat</b> - A resource file for the Revolution Face Library used in every single Wii title that supports the usage of Mii characters. </li>
+      <br> 
+      <li><b>RSD</b> - Revolution Store Data, another Mii data format also used on the Wii. This format is generally used to store Mii data files within certain titles that may utilize them.</li>
+      <br>    
+      </section>   
+      
+      <h2>S</h2>
+      <li><b>ShapeHigh.dat</b> - A resource file for the Nintendo Switch system's Face Library, equivalent to the Wii U's FFLResHigh.dat. </li>
+      <br>
+      <li><b>ShapeMid.dat</b> - A resource file for the Nintendo Switch system's Face Library, equivalent to the Wii U's FFLResMiddle.dat.</li>
+      <br>     
+
+    <br>  
+    <div class="button">
+      <a href="https://cmrn.in/mii">Home</a>
+    </div>
+
+  </main>
+</body>
+</html>
