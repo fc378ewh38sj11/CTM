@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -80,6 +81,16 @@
   	 border-radius: 0.5rem;
   	 border: 1px solid #ccc;
   	 outline: none;
+    }
+
+    #mii-helper {
+      width: 80px;
+      cursor: pointer;
+      transition: transform 0.2s;      
+    }
+
+    #mii-helper:active {
+      transform: scale(0.95);
     }
 
     @media (prefers-color-scheme: dark) {
@@ -1400,6 +1411,7 @@ input.addEventListener('input', e => {
 });
 </script>
 
+
 <br>
 <br>
 <p><small>
@@ -1409,3 +1421,23 @@ All other trademarks and content represented belong to their respective owners.
 <br>
 This is a fan project unaffiliated with Nintendo or any developer/publisher.
 </p></small>
+
+ <div id="mii-wrapper">
+    <img id="mii-helper" src="sleep.webp">
+  </div>
+
+  <script>
+    const mii = document.getElementById('mii-helper');
+    const asleepSrc = 'sleep.webp';
+    const awakeSrc = 'awake.webp';
+
+    mii.addEventListener('click', () => {
+      mii.src = awakeSrc;
+
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+
+      setTimeout(() => {
+        mii.src = asleepSrc;
+      }, 1500);
+    });
+  </script>
