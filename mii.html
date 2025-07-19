@@ -12,14 +12,14 @@
   <link rel="preload" href="https://cmrn.in/bg-light.webp" as="image" type="image/webp" crossorigin>
   <link rel="preload" href="https://cmrn.in/bg-dark.webp" as="image" type="image/webp" crossorigin>
   <title>Every Mii supported title</title>
-  
+
   <style>
     body {
     font-family: 'Poppins', sans-serif;
     background: url('https://cmrn.in/bg-light.webp');
     background-repeat: repeat;
     background-size: auto;
-    background-color: #f4f4f4
+
      padding: 20px;
     }
     h1 {
@@ -36,7 +36,7 @@
   	flex-wrap:wrap;
   	justify-content:center;   
   	gap:0.5rem 1rem;  
-    
+
 	  }    
     .legend div {
       margin: 0 10px;
@@ -47,7 +47,7 @@
     .playable { background-color: #f99; }
     .background { background-color: #99f; }
     .icon { background-color: #adadad; }
-    
+
     .grid {
       display: grid;
       grid-template-columns: repeat(auto-fill, minmax(100px, 1fr));
@@ -71,7 +71,7 @@
     .hidden {
       display: none !important;
     }
-    
+
     .search-bar {
   	text-align: center;
   	margin: 2rem 0;
@@ -103,7 +103,7 @@
     background: url('https://cmrn.in/bg-dark.webp');
     background-repeat: repeat;
     background-size: auto;
-    background-color: #121212;
+
     color: #ffffff;
     }
 
@@ -123,11 +123,13 @@
   b {
     color: #ddd;
   }
+  }
 
   </style>
 </head>
-	
 <body>
+<body style="background-color:#121212;">
+
  <h1>Every Mii supported title</h1>
   <div class="legend">
     <div class="playable" onclick="filterGames('playable')" title="Titles where you can play as and/or interact with Miis (includes head swaps, masks, etc.)">Playable / Interactive</div>
@@ -153,7 +155,7 @@
 <b>Wii (2006 - 2013)</b>
 <br><br>
   <div class="grid" id="gameGrid">
-    
+
 <a class="game icon" href="https://cmrn.in/pages/007">
       <img src="RJ2E52.png" title="007: Quantum of Solace">
     </a>
@@ -857,7 +859,7 @@
   </div>
 
     <div class="grid" id="gameGrid">
-    
+
 <a class="game icon" href="https://nintendo.fandom.com/wiki/Y%C5%8Dsuke_Ide_no_Kenk%C5%8D_Mahjong_DSi">
       <img src="yakumandsi.png" title="Ide Yousuke's Healthy Mahjong DSi">
     </a>
@@ -878,7 +880,7 @@
   </div>
 
     <div class="grid" id="gameGrid">
-    
+
 <a class="game icon" href="https://www.nintendo.com/en-gb/Hardware/Nintendo-3DS-Family/Instant-Software/Activity-Log/Activity-Log-115580.html">
       <img src="activitylog.png" title="Activity Log">
     </a>
@@ -1129,7 +1131,7 @@
   </div>
 
     <div class="grid" id="gameGrid">
-    
+
 <a class="game playable" href="https://en.wikipedia.org/wiki/A_World_of_Keflings">
       <img src="WKLE.jpg" title="A World of Keflings">
     </a>
@@ -1300,7 +1302,7 @@
   </div>
 
     <div class="grid" id="gameGrid">
-    
+
 <a class="game icon" href="https://www.mariowiki.com/Dr._Mario_World">
       <img src="drmw.png" title="Dr. Mario World">
     </a>
@@ -1334,7 +1336,7 @@
   </div>
 
     <div class="grid" id="gameGrid">
-    
+
 <a class="game playable" href="https://en.wikipedia.org/wiki/Active_Life:_Outdoor_Challenge">
       <img src="alod.png" title="Active Life: Outdoor Challenge">
     </a>
@@ -1388,7 +1390,7 @@
   </div>
 
     <div class="grid" id="gameGrid">
-    
+
 <a class="game playable background" href="https://cmrn.in/pages/editor-ounce">
       <img src="miieditoz.png" title="MiiEdit (Mii Maker)">
     </a>
@@ -1408,7 +1410,7 @@
       });
     }
   </script>
-  
+
 <script>
 const input = document.querySelector('#search');
 input.addEventListener('input', e => {
