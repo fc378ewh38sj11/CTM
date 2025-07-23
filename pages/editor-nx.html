@@ -1,0 +1,178 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Poppins">
+<meta charset="UTF-8">
+<meta name="title" content="MiiEdit (Nintendo Switch)" />
+<meta name="description" content="Nintendo Switch's Mii creation system" />
+<meta property="og:image" content="https://cmrn.in/gallery/miieditoz-1.webp"/>
+<link rel="preload" href="https://cmrn.in/bg-light.webp" as="image" type="image/webp" crossorigin>
+<link rel="preload" href="https://cmrn.in/bg-dark.webp" as="image" type="image/webp" crossorigin>
+
+<style>
+@media (prefers-color-scheme: dark) {
+  body {
+    background: url('https://cmrn.in/bg-dark.webp') repeat;
+    background-size: auto;
+    background-color: #121212;
+    color: #eee;
+  }
+
+  .container {
+    background-color: #1a1a1a;
+  }
+}
+
+@media (prefers-color-scheme: light) {
+  body {
+    background: url('https://cmrn.in/bg-light.webp') repeat;
+    background-size: auto;
+    background-color: #f4f4f4
+    color: #1e1e1e;
+  }
+
+  .container {
+    background-color: #ffffff;
+  }
+}
+
+body {
+  font-family: 'Poppins', sans-serif;
+  margin: 0;
+  padding: 0;
+}
+
+.container {
+  max-width: 1000px;
+  margin: 2rem auto;
+  padding: 2rem;
+  border-radius: 8px;
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 2rem;
+  flex-wrap: wrap;
+  flex-direction: column;
+  text-align: left;
+}
+
+.header .text-content {
+  flex: 2;
+}
+
+.header .cover-art {
+  flex: 1;
+  text-align: center;
+}
+
+.cover-art img {
+  width: 100%;
+  max-width: 180px;
+  height: auto;
+  border-radius: 4px;
+}
+
+.cover-art figcaption {
+  font-size: 0.8rem;
+  margin-top: 0.5rem;
+}
+
+section {
+  margin-top: 0.5rem;
+}
+
+.gallery-images {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  align-items: flex-end;
+}
+
+.gallery-images img {
+  max-height: 180px;
+  width: auto;
+  height: auto;
+  object-fit: contain;
+  border-radius: 4px;
+}
+
+
+.button {
+  margin-top: 2rem;
+  text-align: center;
+}
+
+.button a {
+  display: inline-block;
+  background-color: #555;
+  color: #fff;
+  text-decoration: none;
+  padding: 0.75rem 1.5rem;
+  border-radius: 6px;
+  font-weight: bold;
+  transition: background-color 0.2s ease;
+}
+
+.button a:hover {
+  background-color: #777;
+}
+</style>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>MiiEdit (Nintendo Switch)</title>
+</head>
+<body>
+  <main class="container">
+    <section class="header">
+      <div class="text-content">
+        <h1>MiiEdit (Nintendo Switch)</h1>
+        <p>The Nintendo Switch's Mii creation system (internally known as <b>MiiEdit</b>) is the fourth major piece of Mii creation software releasing with the Nintendo Switch on March 3, 2017.</p>
+      </div>
+      <div class="cover-art">
+        <img src="https://cmrn.in/gallery/miieditnx-1.webp">
+        
+      </div>
+    </section>
+    <br>
+
+    <section class="mii-usage">
+      <h2>General information / changes from past editors</h2>
+      <ul>
+      <li>First Mii editor to be stored within system settings rather than a dedicated app. </li>
+      <br>
+      <li>First Mii editor with no native background music. Since the editor is now an applet, compatible software will have its background music play while a user creates a Mii.</li>
+      <br>
+      <li>92 colors for hair, eyes, facial hair, glasses, and lips have been added.</li>
+      <br>
+      <li>9 new glasses have been added.</li>
+      <br>
+      <li>Copying, favorite, creator's name, and birthday options have been removed; bringing down Mii data files by 8 bytes.</li>
+      <br>
+      <li>Mii limit has dropped to 100.</li>
+      <br>
+      <li>Miis now appear on the right of the screen during creation.</li>
+      <br>
+      <li>Choose a Look-Alike returns from the Wii. Note this could be accessed on the Wii U through its first-time setup, but does not appear again in its Mii Maker application. </li>
+      <br>
+      <li>Amiibo data can be scanned to copy the Mii stored on it.</li>
+      <br>
+      <li>Create from Photo option has been removed due to the Nintendo Switch lacking a camera.</li>
+      <br>
+      <li>Users can no longer generate and scan QR codes or renders of Miis.</li>
+    </section>
+    
+    <div class="button">
+      <a href="https://cmrn.in/mii">← Back</a>
+      <a href="https://cmrn.in/mii">Home</a>
+      <a href="https://cmrn.in/mii">Next →</a>
+      <br><br>
+    
+    </div>
+
+  </main>
+</body>
+</html>
