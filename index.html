@@ -1,3 +1,4 @@
+
 <!--
                  #&%#%%&*                
            #######.#########            
@@ -239,38 +240,33 @@ setInterval(GetClock,1000);
     <audio id="konami-audio" src="https://cmrn.in/573.mp3"></audio>
 
     <script>
-        // The Konami Code sequence
         const konamiCode = [38, 38, 40, 40, 37, 39, 37, 39, 66, 65];
         let konamiIndex = 0;
 
-        // Function to play the audio
         function playAudio() {
             const audio = document.getElementById('konami-audio');
             audio.play();
         }
 
-        // Function to spin the image
         function spinImage() {
             const image = document.getElementById('konami-image');
             image.classList.add('spin');
 
-            // Remove the class after the animation ends to allow for re-triggering
             image.addEventListener('animationend', function() {
                 image.classList.remove('spin');
             }, { once: true });
         }
 
-        // Event listener for keydown events
         document.addEventListener('keydown', function(event) {
             if (event.keyCode === konamiCode[konamiIndex]) {
                 konamiIndex++;
                 if (konamiIndex === konamiCode.length) {
                     playAudio();
                     spinImage();
-                    konamiIndex = 0; // Reset the index
+                    konamiIndex = 0; 
                 }
             } else {
-                konamiIndex = 0; // Reset the index if the sequence is broken
+                konamiIndex = 0;
             }
         });
     </script>
