@@ -131,12 +131,17 @@
 <body>
 
  <h1>Every Mii supported title</h1>
+ 
   <div class="legend">
     <div class="playable" onclick="filterGames('playable')" title="Titles where you can play as and/or interact with Miis (includes head swaps, masks, etc.)">Playable / Interactive</div>
     <div class="background" onclick="filterGames('background')" title="Titles where you can see your Miis in the background of gameplay">Background / Non-Playable</div>
     <div class="icon" onclick="filterGames('icon')" title="Titles where Miis are used as player or character identifiers (save files, StreetPass, Miiverse, etc.)">Icon / Avatar</div>
     <div style="background:#ddd;" onclick="filterGames('all')">Show All</div>
   </div>
+  
+    <div id="gameCount" style="text-align:center; margin: 20px 0; font-size: 1.2rem;">
+  Total titles: <span id="countNumber">0</span>
+</div>
 
 <div class="search-bar">
   <input id="search" placeholder="Search titles..." />
@@ -1467,18 +1472,53 @@ This is a fan project unaffiliated with Nintendo or any developer/publisher.
       }, 1500);
     });
   </script>
+  
+  <script>
+document.addEventListener("DOMContentLoaded", function () {
+
+  const games = document.querySelectorAll(".game");
+  const countNumber = document.getElementById("countNumber");
+  const searchInput = document.getElementById("search");
+
+  function updateCount() {
+    const visibleGames = document.querySelectorAll(".game:not(.hidden)");
+    countNumber.textContent = visibleGames.length;
+  }
+
+  window.filterGames = function(type) {
+    games.forEach(game => {
+      if (type === "all") {
+        game.classList.remove("hidden");
+      } else {
+        if (game.classList.contains(type)) {
+          game.classList.remove("hidden");
+        } else {
+          game.classList.add("hidden");
+        }
+      }
+    });
+
+    updateCount();
+  };
+
+  if (searchInput) {
+    searchInput.addEventListener("input", function () {
+      const query = this.value.toLowerCase();
+
+      games.forEach(game => {
+        const title = game.querySelector("img").title.toLowerCase();
+        if (title.includes(query)) {
+          game.classList.remove("hidden");
+        } else {
+          game.classList.add("hidden");
+        }
+      });
+
+      updateCount();
+    });
+  }
+  updateCount();
+
+});
+</script>
 <br>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
