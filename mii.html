@@ -17,25 +17,34 @@
 <main>
   <h1>Every Mii supported title</h1>
 
-  <details class="changelog">
-    <summary>What's new?</summary>
-    <div class="changelog-body">
+  <div class="topbar">
+    <details class="changelog">
+      <summary>Recent changes</summary>
+      <div class="changelog-body">
 
-      <h3>November 25, 2026</h3>
-      <ul>
-        <li>Software titles now appear under their artwork.</li>
-        <li>Added the ability to sort titles by genre, release date, and Mii availability.</li>
-        <li>Replaced digital titles' fan-made covers with proper key artwork.</li>
-        <li>Added the ability to hide/show systems for easier scrolling.</li>
-      </ul>
+        <h3>November 25, 2026</h3>
+        <ul>
+          <li>Software titles now appear under their artwork.</li>
+          <li>Added the ability to sort/filter titles by genre, release date, and Mii availability type.</li>
+          <li>Replaced digital titles' fan-made covers with proper key artwork.</li>
+          <li>Added the ability to hide/show systems for easier scrolling.</li>
+          <li>Added "value pack" titles (ex. Wii Sports + Wii Sports Resort) to the catalog.</li>
+        </ul>
       
-      <h3>June 9, 2026</h3>
-      <ul>
-        <li>Nintendo Switch Sports Resort, the first Nintendo Switch 2 title with Mii support, has been added.</li>
-      </ul>
+        <h3>June 9, 2026</h3>
+        <ul>
+          <li>Added Nintendo Switch Sports Resort, the first Nintendo Switch 2 game with Mii support.</li>
+        </ul>
       
-    </div>
-  </details>
+        <h3>January 29, 2026</h3>
+        <ul>
+          <li>Replaced Tomodachi Life: Living the Dream's placeholder image with official cover art.</li>
+        </ul>
+
+      </div>
+    </details>
+    <button type="button" id="faqOpen" class="faq-open" title="FAQs" aria-label="Frequently asked questions" aria-haspopup="dialog" aria-controls="faqDrawer">?</button>
+  </div>
 
   <section class="toolbar">
     <div class="filters">
@@ -74,6 +83,79 @@
       <input id="search" type="search" placeholder="Search by name">
     </div>
   </section>
+
+  <dialog id="faqDrawer" class="faq-drawer" aria-labelledby="faqTitle">
+  <div class="faq-header">
+    <h2 id="faqTitle">FAQs</h2>
+    <button type="button" id="faqClose" class="faq-close">Close</button>
+  </div>
+
+  <div class="faq-body">
+
+      <details>
+        <summary>What counts as a Mii supported title?</summary>
+        <div class="faq-answer">
+          <p>Inside every game or application that uses Mii characters is a technical library that renders and manages Miis in real time. Each platform has its own iteration of this library, and every title <b>must</b> use it in some way to count as software with Mii support.<br><br> The only exception to this rule is mobile apps that use Mii characters as static icons or sprites, which are pulled server-side from Nintendo's CDN rather than being rendered within the application.</p>
+        </div>
+      </details>
+
+      <details>
+        <summary>What doesn't count as a Mii supported title?</summary>
+        <div class="faq-answer">
+          <p>I typically avoid adding software that uses pre-rendered Mii assets such as profile icons on Nintendo Switch, or stuff like cancelled games.<br><br> As awesome as they are, I don't include fan-made mods or software that supports actual Mii data either.</p>
+        </div>
+      </details>
+
+      <details>
+        <summary>What do the Mii availability types mean?</summary>
+        <div class="faq-answer">
+          <ul>
+            <li><strong>Default:</strong> Mii characters are usable from the very start with no unlock criteria.</li>
+            <li><strong>Unlockable:</strong> Mii characters must be unlocked to play as one and/or require specific criteria to be seen.</li>
+          </ul>
+        </div>
+      </details>
+
+      <details>
+        <summary>What do the Mii appearance types mean?</summary>
+        <div class="faq-answer">
+          <ul>
+            <li><strong>Playable/interactive:</strong> Mii characters can be directly controlled, interacted with, or placed in scenarios in these titles.</li>
+            <li><strong>Non-playable/background:</strong> Mii characters can appear in the background of these titles, commonly as spectators, opponents, or teammates.</li>
+            <li><strong>Icon/avatar:</strong> Mii characters are shown as a profile picture, icon, or stationary character to represent a player.</li>
+          </ul>
+        </div>
+      </details>
+
+      <details>
+        <summary>Is this a complete list?</summary>
+        <div class="faq-answer">
+          <p>The catalog aims to be as comprehensive as possible, but it shouldn't be considered 100% complete. <br><br> Many titles with extremely mundane Mii support like save or StreetPass icons are rarely ever documented, so there's always the possibility of a few titles slipping through the cracks. <br><br> New releases also mean there's always more to add, but I'm constantly on the lookout for software (new and old) with Mii support, usually adding new titles the day of their reveal.</p>
+        </div>
+      </details>
+
+        <details>
+        <summary>Why do fewer titles support Miis nowadays?</summary>
+        <div class="faq-answer">
+          <p>The exact reasoning behind this decision is unknown. Nintendo seems to have stopped granting third-party studios the ability to use Miis in software after 2017, with Bandai Namco being the only exception (likely due to their close relationship). <br><br>A possible factor is the number of low budget and unpolished titles that previously incorporated Miis, with Nintendo likely wanting to shift its view of Miis away from placeholder avatars and toward established characters in their own right. <br><br>Additionally, Nintendo systems prior to Nintendo Switch lacked a traditional user profile system with pre-made icons, so Miis often filled that role. Now, developers can use the system's built-in profile icons to represent users instead of relying on Miis.<br></p>
+        </div>
+      </details>
+
+        <details>
+        <summary>Can I report an incorrect entry/missing title?</summary>
+        <div class="faq-answer">
+          <p>Yes. If I messed up or missed something, please reach out to me via email at <a href="mailto:hello@cmrn.in">hello@cmrn.in</a>.</p>
+        </div>
+      </details>
+
+        <details>
+        <summary>Is there a lore reason for all of this?</summary>
+        <div class="faq-answer">
+          <p>God I wish.</p>
+        </div>
+      </details>
+
+</dialog>
 
   <p class="count"><strong>Showing <span id="visibleCount">0</span> of <span id="totalCount">0</span> titles</strong></p>
 
@@ -187,7 +269,7 @@
         <span class="game-name">Circus</span>
       </a>
 
-      <a class="game background" href="https://en.wikipedia.org/wiki/Crazy_Machines" data-genre="Puzzle" data-release-date="2010-08-13" data-availability="unlockable" title="Crazy Machines">
+      <a class="game playable" href="https://en.wikipedia.org/wiki/Crazy_Machines" data-genre="Puzzle" data-release-date="2010-08-13" data-availability="unlockable" title="Crazy Machines">
         <img src="https://cmrn.in/SCZEMH.png" alt="Crazy Machines" loading="lazy">
         <span class="game-name">Crazy Machines</span>
       </a>
@@ -652,7 +734,7 @@
         <span class="game-name">Mario Kart Wii</span>
       </a>
 
-      <a class="game icon background" href="https://mariokart.fandom.com/wiki/Mario_Kart_Channel" data-genre="Utility" data-release-date="2008-04-10" data-availability="default" title="Mario Kart Channel">
+      <a class="game icon" href="https://mariokart.fandom.com/wiki/Mario_Kart_Channel" data-genre="Utility" data-release-date="2008-04-10" data-availability="default" title="Mario Kart Channel">
         <img src="mkc.webp" alt="Mario Kart Channel" loading="lazy">
         <span class="game-name">Mario Kart Channel</span>
       </a>
@@ -682,12 +764,12 @@
         <span class="game-name">Marvel Super Hero Squad</span>
       </a>
 
-      <a class="game background icon" href="https://en.wikipedia.org/wiki/Metroid_Prime_3:_Corruption" data-genre="Action" data-release-date="2007-08-27" data-availability="unlockable" title="Metroid Prime 3: Corruption">
+      <a class="game background icon" href="https://en.wikipedia.org/wiki/Metroid_Prime_3:_Corruption" data-genre="Action" data-release-date="2007-08-27" data-availability="default" title="Metroid Prime 3: Corruption">
         <img src="https://cmrn.in/RM3E01.png" alt="Metroid Prime 3: Corruption" loading="lazy">
         <span class="game-name">Metroid Prime 3: Corruption</span>
       </a>
 
-      <a class="game background icon" href="https://en.wikipedia.org/wiki/Metroid_Prime:_Trilogy" data-genre="Action" data-release-date="2009-08-24" data-availability="unlockable" title="Metroid Prime: Trilogy">
+      <a class="game background icon" href="https://en.wikipedia.org/wiki/Metroid_Prime:_Trilogy" data-genre="Action" data-release-date="2009-08-24" data-availability="default" title="Metroid Prime: Trilogy">
         <img src="https://cmrn.in/MPT.jpg" alt="Metroid Prime: Trilogy" loading="lazy">
         <span class="game-name">Metroid Prime: Trilogy</span>
       </a>
@@ -702,7 +784,7 @@
         <span class="game-name">Minna de Taisen Puzzle: Shanghai Wii</span>
       </a>
 
-      <a class="game icon" href="https://gamesdb.launchbox-app.com/games/images/78108-minna-de-tobikome-penguin-diving-hooper-looper" data-genre="Arcade" data-release-date="2009-09-15" data-availability="default" title="Minna de Tobikome! Penguin Diving - Hooper Looper">
+      <a class="game icon" href="https://gamesdb.launchbox-app.com/games/details/78108-minna-de-tobikome-penguin-diving-hooper-looper" data-genre="Arcade" data-release-date="2009-09-15" data-availability="default" title="Minna de Tobikome! Penguin Diving - Hooper Looper">
         <img src="penguin.webp" alt="Minna de Tobikome! Penguin Diving - Hooper Looper" loading="lazy">
         <span class="game-name">Minna de Tobikome! Penguin Diving - Hooper Looper</span>
       </a>
@@ -1450,9 +1532,9 @@
         <span class="game-name">Funfair Party Games</span>
       </a>
 
-      <a class="game playable" href="https://nintendo.fandom.com/wiki/Gotouchi_Tetsudou:_Gotouchi_Kyara_to_Nihon_Zenkoku_no_Tabi" data-genre="Party" data-release-date="2014-11-27" data-availability="default" title="Gotouchi Tetsudou: Gotouchi Chara to Nihon Zenkoku no Tabi">
-        <img src="https://cmrn.in/gotouchi3.png" alt="Gotouchi Tetsudou: Gotouchi Chara to Nihon Zenkoku no Tabi" loading="lazy">
-        <span class="game-name">Gotouchi Tetsudou: Gotouchi Chara to Nihon Zenkoku no Tabi</span>
+      <a class="game playable" href="https://nintendo.fandom.com/wiki/Gotouchi_Tetsudou:_Gotouchi_Kyara_to_Nihon_Zenkoku_no_Tabi" data-genre="Party" data-release-date="2014-11-27" data-availability="default" title="Gotouchi Tetsudou: Gotouchi Kyara to Nihon Zenkoku no Tabi">
+        <img src="https://cmrn.in/gotouchi3.png" alt="Gotouchi Tetsudou: Gotouchi Kyara to Nihon Zenkoku no Tabi" loading="lazy">
+        <span class="game-name">Gotouchi Tetsudou: Gotouchi Kyara to Nihon Zenkoku no Tabi</span>
       </a>
 
       <a class="game playable" href="https://cmrn.in/pages/mirai" data-genre="Music" data-release-date="2012-03-08" data-availability="unlockable" title="Hatsune Miku and Future Stars: Project Mirai">
@@ -1505,9 +1587,9 @@
         <span class="game-name">Mario Tennis Open</span>
       </a>
 
-      <a class="game icon" href="https://www.mariowiki.com/Mario_vs._Donkey_Kong:_Tipping_Stars" data-genre="Puzzle" data-release-date="2015-03-05" data-availability="default" title="Mario vs Donkey Kong: Tipping Stars">
-        <img src="https://cmrn.in/JYLP.jpg" alt="Mario vs Donkey Kong: Tipping Stars" loading="lazy">
-        <span class="game-name">Mario vs Donkey Kong: Tipping Stars</span>
+      <a class="game icon" href="https://www.mariowiki.com/Mario_vs._Donkey_Kong:_Tipping_Stars" data-genre="Puzzle" data-release-date="2015-03-05" data-availability="default" title="Mario vs. Donkey Kong: Tipping Stars">
+        <img src="https://cmrn.in/JYLP.jpg" alt="Mario vs. Donkey Kong: Tipping Stars" loading="lazy">
+        <span class="game-name">Mario vs. Donkey Kong: Tipping Stars</span>
       </a>
 
       <a class="game playable background icon" href="https://en-americas-support.nintendo.com/app/answers/detail/a_id/627/~/mii-maker-overview-%28nintendo-3ds-family%29" data-genre="Utility" data-release-date="2011-02-25" data-availability="default" title="Mii Maker">
@@ -2195,6 +2277,10 @@
       All other trademarks and content represented belong to their respective owners.<br>
       This is a fan project unaffiliated with Nintendo or any developer/publisher.
     </small></p>
+
+    <button type="button" id="sleepyMii" class="sleepy-mii" aria-label="Back to top">
+  <img src="https://cmrn.in/sleep.webp" alt="">
+</button>
   </footer>
 </main>
 
@@ -2313,6 +2399,39 @@
   });
   sortBy.value = 'title-asc';
   sortCards();
+})();
+(() => {
+  const drawer = document.getElementById('faqDrawer');
+  document.getElementById('faqOpen').addEventListener('click', () => drawer.showModal());
+  document.getElementById('faqClose').addEventListener('click', () => drawer.close());
+  drawer.addEventListener('click', event => {
+    if (event.target === drawer) drawer.close();
+  });
+})();
+(() => {
+  const button = document.getElementById('sleepyMii');
+  const image = button.querySelector('img');
+  const sleeping = 'https://cmrn.in/sleep.webp';
+  const shocked = 'https://cmrn.in/awake.webp';
+  let wakeTimer;
+  let scrollTimer;
+
+  new Image().src = shocked;
+
+  button.addEventListener('click', () => {
+    clearTimeout(wakeTimer);
+    clearTimeout(scrollTimer);
+    image.src = shocked;
+
+    scrollTimer = setTimeout(() => {
+      const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+      window.scrollTo({ top: 0, behavior: reduceMotion ? 'auto' : 'smooth' });
+    }, 600);
+
+    wakeTimer = setTimeout(() => {
+      image.src = sleeping;
+    }, 3000);
+  });
 })();
 </script>
 </body>
