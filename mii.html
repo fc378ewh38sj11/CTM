@@ -2308,6 +2308,9 @@
     control.addEventListener('change', applyFilters);
   });
   sortBy.addEventListener('change', sortCards);
+   [genreFilter, availabilityFilter, roleFilter, sortBy].forEach(select => {
+    select.addEventListener('change', () => select.blur());
+  });
   sortBy.value = 'title-asc';
   sortCards();
 })();
